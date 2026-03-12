@@ -1,23 +1,27 @@
 
 # 74. Search a 2D Matrix
-# You are given an m x n integer matrix matrix with the following two properties:
-# Each row is sorted in non-decreasing order.
-# The first integer of each row is greater than the last integer of the previous row.
-# Given an integer target, return true if target is in matrix or false otherwise.
-# You must write a solution in O(log(m * n)) time complexity.
+# Given an m x n matrix, where each of the rows is sorted in ascending order and the first integer of each row is greater than the last integer of the previous row, and an integer target, return true if target is in matrix or false otherwise.
+
+# First solution
+# We can use binary search to find the target in the matrix. We can treat the matrix as a sorted array and use binary search to find the target.
 
 from typing import List
 
-
 def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
-    l, r = 0, len(matrix) - 1
-    while l <= r:
-        mid = l + ((r - l) // 2)
+    ROWS, COLS = len(matrix), len(matrix[0])
+    left, right = 0, ROWS * COLS - 1
 
-        if matrix[mid] == target:
-            return mid
-        elif matrix[mid] < target:
-            l = mid + 1
+    while left <= right:
+        mid = (left + right) // 2
+        row, col = mid // COLS, mid % COLS
+        if matrix[row][col] == target:
+            return True
+        elif matrix[row][col] < target:
+            left = mid + 1
         else:
-            r = mid - 1
-    return -1
+            right = mid - 1
+
+    return False
+
+# Time complexity : O(log(m*n)) We are doing binary search on a matrix of size m*n.
+# Space complexity : O(1) We are not using any extra space.
