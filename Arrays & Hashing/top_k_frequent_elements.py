@@ -3,7 +3,7 @@
 # Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
 
 # First solution :
-# On itère sur la liste pour compter le nombre d'apparition de chaque élément, puis on trie les éléments en fonction de leur nombre d'apparition et on retourne les k premiers éléments.
+# We iterate over the list to count the number of occurrences of each element, then we sort the elements by their number of occurrences and return the k first elements.
 
 from collections import defaultdict
 from typing import List
@@ -18,8 +18,8 @@ def topKFrequent(self, nums: List[int], k: int) -> List[int]:
 # Space complexity : O(n) We store all the elements in the hashmap.
 
 # Second solution :
-# On utilise un heap pour stocker les éléments en fonction de leur fréquence. On parcourt la liste pour compter le nombre d'apparition de chaque élément, puis on ajoute les éléments dans le heap en fonction de leur fréquence. 
-# Enfin, on retourne les k éléments les plus fréquents.
+# We use a heap to store the elements based on their frequency. We go through the list to count the number of occurrences of each element, then we push the elements onto the heap based on their frequency.
+# Finally, we return the k most frequent elements.
 
 import heapq
 

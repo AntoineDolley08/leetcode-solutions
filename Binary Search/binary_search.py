@@ -21,5 +21,5 @@ def search(self, nums: List[int], target: int) -> int:
             r = mid - 1
     return -1
 
-# Time complexity : O(log(n)) - on divise l'espace de recherche par 2 à chaque itération
-# Space complexity : O(1) - uniquement des variables (l, r, mid)
+# Time complexity : O(log(n)) - we divide the search space by 2 at each iteration
+# Space complexity : O(1) - only a constant number of variables (l, r, mid)

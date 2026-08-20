@@ -1,6 +1,4 @@
-from collections import defaultdict
-from turtle import st
-from typing import Counter
+from collections import Counter, defaultdict
 
 
 # 242. Valid Anagram
@@ -54,7 +52,7 @@ def isAnagram(self, s: str, t: str) -> bool:
 # Space complexity : O(1) We only use a fixed size array of 26 elements to keep track of the count of each character.
 
 # Fourth solution :
-# pour chaque caractère de s on regarde si il y en a le même nombre dans t.
+# For each character of s, check that it appears the same number of times in t.
 
 def isAnagram(self, s: str, t: str) -> bool:
     if len(s) != len(t):
